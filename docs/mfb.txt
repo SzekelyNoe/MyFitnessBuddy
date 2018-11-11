@@ -1,0 +1,14 @@
+
+  A projektem célja egy olyan Android applikáció készítése, amely fitness edzők és a mozgásra vágyó személyek számára nyújt 
+egymásra találási lehetőséget egy match-elős algoritmus segítségével. Az applikáció kommunikációs felületet biztosít az 
+egymásra talált buddy-knak, ahol megbeszélhetik edzésprogramjukat, áttárgyalhatják a kliens előrehaladtát, elmondhatják személyes
+reflexiójikat egymásról, vagy épp egy harmadik személyről...
+
+Funkcionális követelmények: 
+  1.Bejelentkezés/Regisztráció
+  2.Profil kezelése
+  3.Match-elés 
+  4.Buddy-k listázása
+  5.Buddy törlése
+  6.Buddy jelentése
+  7.Chat a buddy-val
