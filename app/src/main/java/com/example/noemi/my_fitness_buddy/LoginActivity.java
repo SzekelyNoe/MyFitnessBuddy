@@ -30,8 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button buttonLogin;
     private TextView textView;
 
-    private DatabaseReference databaseReferenceOne;
-    private DatabaseReference databaseReferenceTwo;
+    private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
 
     @Override
@@ -40,8 +39,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        databaseReferenceOne = FirebaseDatabase.getInstance().getReference().child("Trainees");
-        databaseReferenceTwo = FirebaseDatabase.getInstance().getReference().child("Trainers");
+        databaseReference = FirebaseDatabase.getInstance().getReference();
 
 
 
@@ -91,35 +89,21 @@ public class LoginActivity extends AppCompatActivity {
 
         final String user_id = firebaseAuth.getCurrentUser().getUid();
 
-        databaseReferenceOne.addValueEventListener(new ValueEventListener() {
+        databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                if(dataSnapshot.hasChild(user_id)){
-                    //will lead to TraineUsersProfile...
-                    Intent mainIntent = new Intent(LoginActivity.this,MainActivity.class);
-                    startActivity(mainIntent);
+                if(dataSnapshot.child("Trainees").hasChild(user_id)){
+                    
+                    Intent profileIntent = new Intent(LoginActivity.this,ProfileActivity.class);
+                    startActivity(profileIntent);
                 }
-                else {
-                    //Toast.makeText(LoginActivity.this, "Set up your account first!", Toast.LENGTH_SHORT).show();
-                    databaseReferenceTwo.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            if(dataSnapshot.hasChild(user_id)){
-                                //will lead to TrainerUsersProfile
-                                Intent mainIntent = new Intent(LoginActivity.this,MainActivity.class);
-                                startActivity(mainIntent);
-                            }
-                            else{
-                                Toast.makeText(LoginActivity.this, "Set up your account first!", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                        }
-                    });
+                else if(dataSnapshot.child("Trainers").hasChild(user_id)){
+                    Intent profileTrainerIntent = new Intent(LoginActivity.this,ProfileTrainerActivity.class);
+                    startActivity(profileTrainerIntent);
+                }
+                else{
+                    Toast.makeText(LoginActivity.this, "Set up your account first!", Toast.LENGTH_SHORT).show();
                 }
 
             }

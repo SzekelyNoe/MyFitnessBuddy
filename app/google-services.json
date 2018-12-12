@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "191625748062",
+    "firebase_url": "https://myfitnessbuddy-91789.firebaseio.com",
+    "project_id": "myfitnessbuddy-91789",
+    "storage_bucket": "myfitnessbuddy-91789.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:191625748062:android:83ea80724a4ff5cb",
+        "android_client_info": {
+          "package_name": "com.example.noemi.my_fitness_buddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "191625748062-m5ui3i5upvko6fji3mdpq2o3u277tnql.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.noemi.my_fitness_buddy",
+            "certificate_hash": "a3a2c4b7b2c4792fde172afb5562c51e8cae7cb9"
+          }
+        },
+        {
+          "client_id": "191625748062-lphtq5ob6ecavf6tq9bci2fn71rrqvl7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRYUetzN3vIu-gH0-JO-tU30RAVnI5oKA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "191625748062-lphtq5ob6ecavf6tq9bci2fn71rrqvl7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

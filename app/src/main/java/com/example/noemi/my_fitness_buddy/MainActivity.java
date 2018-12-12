@@ -25,7 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    // private Button button;
+
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
 
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        //  FirebaseAuth.getInstance().signOut();
+        FirebaseAuth.getInstance().signOut();
 
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -47,24 +47,14 @@ public class MainActivity extends AppCompatActivity {
                     loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(loginIntent);
                 }
-                else{
-                    Intent profileIntent = new Intent(MainActivity.this,ProfileActivity.class);
-                    startActivity(profileIntent);
-                }
+//                else{
+//                    Toast.makeText(MainActivity.this, "Drops me here....", Toast.LENGTH_SHORT).show();
+//                    Intent profileIntent = new Intent(MainActivity.this,ProfileActivity.class);
+//                    startActivity(profileIntent);
+//                }
             }
         };
 
-
-
-//        button=(Button)findViewById(R.id.button);
-//
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this,LoginActivity.class);
-//                startActivity(intent);
-//            }
-//        });
 
     }
 
