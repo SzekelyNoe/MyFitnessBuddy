@@ -97,9 +97,15 @@ public class RegisterActivity extends AppCompatActivity {
                     currentUserReference.child("UserType").setValue(user);
                     currentUserReference.child("TrainingType").setValue(training);
 
-                    Intent mainIntent = new Intent(RegisterActivity.this,MainActivity.class);
-                    mainIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(mainIntent);
+                    if(user.equals("Trainer")){
+                        Intent intent = new Intent(RegisterActivity.this,ProfileTrainerActivity.class);
+                        startActivity(intent);
+                    }
+                    else
+                    {
+                        Intent intent = new Intent(RegisterActivity.this,ProfileActivity.class);
+                        startActivity(intent);
+                    }
                 }
             }
         });

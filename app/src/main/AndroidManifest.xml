@@ -19,7 +19,9 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".ProfileTrainerActivity"></activity>
+        <activity android:name=".ProfileTrainerActivity" />
+        <activity android:name=".MessageActivity" />
+        <activity android:name=".ListingActivity"></activity>
     </application>
 
 </manifest>
